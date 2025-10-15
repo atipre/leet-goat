@@ -1,0 +1,475 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  place-items: unset !important;
+  min-width: unset !important;
+  min-height: unset !important;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App container */
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #333;
+  background-color: #000000;
+  flex-shrink: 0;
+}
+
+h1 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+/* Chat area */
+.chat-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #000000;
+}
+
+/* Empty state */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #666;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state-text {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.empty-state-subtext {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Message bubbles */
+.message {
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  position: relative;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.message.user {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  margin-left: 40px;
+  border-left: 4px solid #666;
+}
+
+.message.assistant {
+  background-color: #111111;
+  border: 1px solid #333;
+  margin-right: 40px;
+  border-left: 4px solid #d21b1b;
+}
+
+.message.system {
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  margin: 8px 20px;
+  border-left: 4px solid #FF9800;
+  font-size: 0.9em;
+}
+
+.message-content {
+  color: #ffffff;
+}
+
+.message-timestamp {
+  font-size: 0.75em;
+  color: #888;
+  margin-top: 8px;
+  text-align: right;
+}
+
+/* Solution container */
+.solution-container {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* Error details */
+.error-details {
+  background-color: #2d1b1b;
+  color: #ff6b6b;
+  padding: 12px 16px;
+  border: 1px solid #d21b1b;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Input area */
+.input-area {
+  padding: 16px 20px;
+  border-top: 1px solid #333;
+  background-color: #000000;
+  flex-shrink: 0;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Follow-up question input */
+.followup-container {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #333;
+}
+
+.followup-input-wrapper {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.followup-input {
+  flex: 1;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 44px;
+  max-height: 120px;
+}
+
+.followup-input:focus {
+  outline: none;
+  border-color: #d21b1b;
+  box-shadow: 0 0 0 2px rgba(210, 27, 27, 0.2);
+}
+
+.followup-input::placeholder {
+  color: #888;
+}
+
+.send-button {
+  background-color: #d21b1b;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 50px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-button:hover:not(:disabled) {
+  background-color: #b71c1c;
+  transform: translateY(-1px);
+}
+
+.send-button:disabled {
+  background-color: #333;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.followup-hint {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+}
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.language-label {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 70px;
+}
+
+.language-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  max-width: 120px;
+}
+
+.language-dropdown:hover {
+  border-color: #d21b1b;
+}
+
+.language-dropdown:focus {
+  outline: none;
+  border-color: #d21b1b;
+}
+
+.language-dropdown:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  border-color: #666;
+}
+
+/* Capture button */
+.capture-button {
+  background-color: #d21b1b;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+}
+
+.capture-button:hover {
+  background-color: #a31515;
+}
+
+.capture-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #666;
+}
+
+/* Markdown content */
+.simple-markdown {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+}
+
+.simple-markdown h2 {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 8px;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  text-align: center;
+}
+
+.simple-markdown h3 {
+  color: #ffffff;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+  text-align: center;
+}
+
+.simple-markdown pre {
+  background-color: #0d1117 !important;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.45;
+  text-align: left;
+  position: relative;
+}
+
+.code-block-container {
+  position: relative;
+}
+
+.copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+/* Hide any other copy buttons that might be added by highlight.js or other libraries */
+.hljs-copy-button,
+.hljs-copy,
+[data-copy-button],
+.copy-code-button {
+  display: none !important;
+}
+
+/* Ensure our copy button is always visible */
+.code-block-container .copy-button {
+  display: block !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  z-index: 1000 !important;
+}
+
+.copy-button:hover {
+  background-color: #30363d;
+  border-color: #d21b1b;
+}
+
+.copy-button.copied {
+  background-color: #238636;
+  border-color: #238636;
+}
+
+.simple-markdown code {
+  background-color: #000000;
+  color: #d4a017;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', Consolas, monospace;
+  font-size: 13px;
+}
+
+.simple-markdown pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  border: none;
+  margin: 0;
+  color: #ffffff;
+}
+
+.simple-markdown ul {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.simple-markdown p {
+  margin: 1em 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px;
+  }
+  
+  .chat-area {
+    padding: 16px;
+  }
+  
+  .input-area {
+    padding: 12px 16px;
+  }
+  
+  .language-selector {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .language-label {
+    min-width: unset;
+  }
+  
+  .language-dropdown {
+    max-width: unset;
+  }
+  
+  .message.user .message-content {
+    margin-left: 10%;
+  }
+  
+  .message.assistant .message-content {
+    margin-right: 10%;
+  }
+}

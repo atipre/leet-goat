@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build outputs
+dist/
+build/
+*.zip
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python virtual environment
+venv/
+__pycache__/
+
+# Test files
+test.json
+test2.json
+*.b64
+
+# Archive & temporary files
+archive/
+*.tmp
+
+# Coverage
+coverage/
+
+# Production
+/build
+
+# Misc
+.env.development.local
+.env.test.local
+.env.production.local

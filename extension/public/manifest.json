@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "version" : "1.0.1",
+    "name" : "LeetGoat",
+    "description": "AI-powered tool to capture and solve Data Structures & Algorithms problems from any webpage",
+
+    "action": {
+        "default_title": "Open LeetGoat Side Panel"
+    },
+    "side_panel": {
+        "default_path": "index.html"
+    },
+    "permissions": [
+        "activeTab",
+        "sidePanel",
+        "tabs"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://*.vercel.app"
+    },
+
+    "icons": {
+        "16": "16-icon.png",
+        "32": "32-icon.png",
+        "48": "48-icon.png",
+        "128": "128-icon.png"
+    }
+}
