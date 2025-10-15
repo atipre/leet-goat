@@ -19,10 +19,7 @@
 - 🎨 **Syntax Highlighting** - Beautiful code formatting with markdown support
 - 📋 **Copy Code** - Clean code copying without formatting artifacts
 - 🌐 **Universal Support** - Works on any coding website
-
-## 🎬 Demo
-
-https://github.com/user-attachments/assets/demo.mp4
+- 🎬 **Demo** - Check out the demo at [leetgoat.xyz](https://leetgoat.xyz/)
 
 ## 🚀 Installation
 
