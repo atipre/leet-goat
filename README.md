@@ -22,9 +22,7 @@
 
 ## 🎬 Demo
 
-<div align="center">
-  <img src="demo.gif" alt="LeetGoat Demo" width="800"/>
-</div>
+https://github.com/user-attachments/assets/demo.mp4
 
 ## 🚀 Installation
 
